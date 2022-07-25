@@ -1,4 +1,4 @@
-"""CLI 'pipelines' command"""
+"""CLI 'schedules' command"""
 import json
 import logging
 import os
@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 
 @mutils.command(
-    "pipelines",
-    short_help="Generate Matatika pipeline.yml files from your Meltano project's schedules",
+    "schedules",
+    short_help="Create Matatika pipeline.yml files from your Meltano project's schedules",
 )
-def pipelines():
-    """Generate Matatika pipeline.yml files"""
+def schedules():
+    """Generate Matatika pipeline.yml files from a Meltano project's schedules"""
     project_root = os.getenv("MELTANO_PROJECT_ROOT", os.getcwd())
 
     meltano_bin = ".meltano/run/bin"
